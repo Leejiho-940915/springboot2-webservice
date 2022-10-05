@@ -8,6 +8,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import web.HelloController;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @RunWith(SpringRunner.class) // 1.
 @WebMvcTest(controllers = HelloController.class) // 2.
 public class HelloControllerTest {
@@ -19,7 +23,7 @@ public class HelloControllerTest {
     public void helloReturn() throws Exception {
         String hello = "hello";
 
-        mvc.perform(get( urlTemplate : "/hello")) // 5.
+        mvc.perform(get("/hello")) // 5.
                 .andExpect(status().isOk()) // 6.
                 .andExpect(content().string(hello)); // 7.
     }
