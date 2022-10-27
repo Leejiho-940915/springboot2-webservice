@@ -1,9 +1,9 @@
-package web;
+package com.book.springboot.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import web.dto.HellohResponseDto;
+import com.book.springboot.web.dto.HellohResponseDto;
 
 @RestController // 1.
 public class HelloController {
